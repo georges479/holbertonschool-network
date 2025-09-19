@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
-#Bash script to change localhost to 127.0.0.2 and facebook.com to 8.8.8.8.
-sudo cp /etc/hosts /etc/hosts.bak
-echo "127.0.0.2 localhost" | sudo tee -a /etc/hosts
-echo "8.8.8.8 facebook.com" | sudo tee -a /etc/hosts
+# This script configures the Ubuntu server so that:
+# - localhost resolves to 127.0.0.2
+# - facebook.com resolves to 8.8.8.8
+
+# Overwrite /etc/hosts with the required configuration
+sudo bash -c 'cat > /etc/hosts <<EOF
+127.0.0.2   localhost
+8.8.8.8     facebook.com
+EOF'
