@@ -1,0 +1,1 @@
+My blog for explain what happends how you type htttps://www.gogle.com in your broser and press Enter.:
