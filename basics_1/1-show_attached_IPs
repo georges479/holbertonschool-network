@@ -1,5 +1,5 @@
-#!/bin/bash
-# Display all active IPv4 addresses on the machine
+#!/usr/bin/env bash
+# This script displays all active IPv4 addresses on the machine
 
-# Use ip command to get IPv4 addresses, print only the address without CIDR
-ip -4 addr show | grep -oP '(?<=inet\s)\d+(\.\d+){3}'
+# Use the ifconfig and grep to filter out IPv4 addresses
+ifconfig | grep -w "inet" | awk '{print $2}'
